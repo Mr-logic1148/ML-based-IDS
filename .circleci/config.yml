@@ -13,7 +13,7 @@ jobs:
           command: pip install nbconvert
       - run:
           name: Convert notebooks to Python
-          command: jupyter nbconvert --to script *.ipynb  
+          command: jupyter nbconvert --to script CICIDS 2017 final code.ipynb  
       - run:
           name: Run tests
           command: pytest  # Assuming you use pytest for testing
