@@ -1,6 +1,6 @@
 pandas
 numpy
-tenforflow
+tensorflow
 keras
 sklearn
 matplotlib
