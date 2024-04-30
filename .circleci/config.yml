@@ -1,0 +1,23 @@
+version: 2.1
+jobs:
+  build_and_test:
+    docker:
+      - image: circleci/python:3.9  # Use a Python-based image
+    steps:
+      - checkout
+      - run: 
+          name: Install dependencies
+          command: pip install -r requirements.txt
+      - run:
+          name: Install nbconvert
+          command: pip install nbconvert
+      - run:
+          name: Convert notebooks to Python
+          command: jupyter nbconvert --to script *.ipynb  
+      - run:
+          name: Run tests
+          command: pytest  # Assuming you use pytest for testing
+workflows:
+  my-workflow:
+    jobs:
+      - build_and_test
